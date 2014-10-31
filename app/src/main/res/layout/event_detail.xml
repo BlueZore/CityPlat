@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/rl001"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll001"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/plug_title" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事件标题：" />
+
+                        <EditText
+                            android:id="@+id/edTitle"
+                            style="@style/event_detail_edit"
+                            android:maxLength="100" >
+
+                            <requestFocus />
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:layout_gravity="center"
+                            android:text="监管案件类型：" />
+
+                        <RadioGroup
+                            android:id="@+id/rblEvent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/rblEvent1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="事件类" />
+
+                            <RadioButton
+                                android:id="@+id/rblEvent2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="部件类" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sp001"
+                        style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事件大类：" />
+
+                        <Spinner
+                            android:id="@+id/spType001"
+                            style="@style/detail_sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sp002"
+                        style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事件小类：" />
+
+                        <Spinner
+                            android:id="@+id/spType002"
+                            style="@style/detail_sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sp011"
+                        style="@style/event_detail_line"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="部件大类：" />
+
+                        <Spinner
+                            android:id="@+id/spType011"
+                            style="@style/detail_sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sp012"
+                        style="@style/event_detail_line"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="部件小类：" />
+
+                        <Spinner
+                            android:id="@+id/spType012"
+                            style="@style/detail_sp" />
+                    </LinearLayout>
+                    
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="立案条件：" />
+
+                        <TextView
+                            android:id="@+id/txtConditionOfCase"
+                            style="@style/event_detail_edit" >
+                        </TextView>
+                    </LinearLayout>
+                    
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="结案条件：" />
+
+                        <TextView
+                            android:id="@+id/txtConditionOfClose"
+                            style="@style/event_detail_edit" >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="处置时限：" />
+
+                        <TextView
+                            style="@style/event_detail_edit"
+                            android:text="自定义" >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="联系电话：" />
+
+                        <EditText
+                            android:id="@+id/edMobile"
+                            style="@style/event_detail_edit"
+                            android:inputType="textPhonetic|number"
+                            android:maxLength="12" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/event_detail_line"
+                        android:paddingTop="4dp"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="预计完成时间：" />
+
+                        <Button
+                            android:id="@+id/btnFinishDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg003"
+                            android:text="选择"
+                            android:textColor="#0d0d0d" />
+
+                        <Button
+                            android:id="@+id/btnFinishTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/bg003"
+                            android:text="选择"
+                            android:textColor="#0d0d0d" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事件地点：" />
+
+                        <EditText
+                            android:id="@+id/edAddress"
+                            style="@style/event_detail_edit"
+                            android:layout_height="100dp"
+                            android:inputType="textMultiLine"
+                            android:maxLength="50" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事件描述：" />
+
+                        <EditText
+                            android:id="@+id/edRemark"
+                            style="@style/event_detail_edit"
+                            android:layout_height="100dp"
+                            android:inputType="textMultiLine" >
+                        </EditText>
+                    </LinearLayout>
+
+                    <GridView
+                        android:id="@+id/gvImage"
+                        android:layout_width="300dp"
+                        android:layout_height="84dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rwn003"
+                        android:fadeScrollbars="false"
+                        android:numColumns="3"
+                        android:padding="8dp" >
+                    </GridView>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="事发位置：" />
+
+                        <EditText
+                            android:id="@+id/edMap"
+                            style="@style/event_detail_edit"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:enabled="false"
+                            android:inputType="textMultiLine" >
+                        </EditText>
+
+                        <Button
+                            android:id="@+id/btnSelectMap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地图" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:paddingTop="8dp" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/submit" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/btnCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cancel" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll002"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/plug_maps" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imageSourceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rl001"
+        android:background="@drawable/imgbg"
+        android:orientation="vertical"
+        android:paddingTop="25dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btnImageT"
+            style="@style/ImageSourceButton"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/btnImageS"
+            style="@style/ImageSourceButton"
+            android:text="相册" />
+
+        <Button
+            android:id="@+id/btnImageC"
+            style="@style/ImageSourceButton"
+            android:text="取消" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">城管通</string>
+    <string name="app_name_en">CityPlat</string>
+    <string name="action_settings">设置</string>
+
+</resources>

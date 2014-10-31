@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/plug_title" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        layout="@layout/plug_tabs" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/context_top"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_weight="1"
+        android:background="@drawable/context_middle"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/tab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="派发时间:" />
+
+                        <TextView
+                            android:id="@+id/txtPaymentDate"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="派发人:" />
+
+                        <TextView
+                            android:id="@+id/txtPaymentPeople"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="受理部门:" />
+
+                        <TextView
+                            android:id="@+id/txtAcceptDepartment"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="受理人:" />
+
+                        <TextView
+                            android:id="@+id/txtAcceptPeople"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="信息处理类型:" />
+
+                        <TextView
+                            android:id="@+id/txtInfoDealType"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="信息处理人员:" />
+
+                        <TextView
+                            android:id="@+id/txtInfoDealUser"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="受理时间:" />
+
+                        <TextView
+                            android:id="@+id/txtAcceptDate"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="处理状态:" />
+
+                        <TextView
+                            android:id="@+id/txtFlowStatus"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="办结时间:" />
+
+                        <TextView
+                            android:id="@+id/txtCompleteDate"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="响应时长:" />
+
+                        <TextView
+                            android:id="@+id/txtResponseTime"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="处理时长:" />
+
+                        <TextView
+                            android:id="@+id/txtProcessTime"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="总时长:" />
+
+                        <TextView
+                            android:id="@+id/txtSumTime"
+                            style="@style/event_detail_edit" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="任务描述:" />
+
+                        <TextView
+                            android:id="@+id/txtCaseRemark"
+                            style="@style/event_detail_edit"
+                            android:minHeight="100dp" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/event_detail_line" >
+
+                        <TextView
+                            style="@style/event_detail_text"
+                            android:text="办结描述:" />
+
+                        <TextView
+                            android:id="@+id/txtRemark"
+                            style="@style/event_detail_edit"
+                            android:minHeight="100dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/plug_imglist" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/context_bottom"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

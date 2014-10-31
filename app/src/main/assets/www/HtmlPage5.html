@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript"
+            src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0">
+    </script>
+    <script>
+        //if (navigator.geolocation) {//获取经纬度
+        //    navigator.geolocation.getCurrentPosition(GetMap);
+        //}
+
+        window.onload = GetMap();
+
+        var map = null;
+        var searchManager = null;
+        var currInfobox = null;
+        var lng = 126.691397339992;
+        var lat = 45.7519487180559;
+
+        function GetMap(position) {
+            //alert("");
+            //lng = position.coords.longitude;
+            //lat = position.coords.latitude;
+
+            Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', {
+                callback: function () {
+                    map = new Microsoft.Maps.Map(document.getElementById('divMap'),
+                    {
+                        credentials: "AqpjB-zTBd9X8gpP9--fVetVZW5zDyS5-R0xEBqYTGa16SRfOjv4y5x7cgdVyibd",
+                        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                        enableClickableLogo: false,
+                        enableSearchLogo: false,
+                        center: new Microsoft.Maps.Location(lat, lng),
+                        zoom: 15,
+                        theme: new Microsoft.Maps.Themes.BingTheme()
+                    });
+                }
+            });
+        }
+
+        function setLocal() {
+            if (navigator.geolocation) {//获取经纬度
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+
+        function showPosition(position) {
+            lng = position.coords.longitude;
+            lat = position.coords.latitude;
+            document.getElementById("lng").value = lat + "," + lng;
+            clearAllAndAddPoint();
+        }
+
+        function clearAllAndAddPoint() {
+            map.entities.clear();
+            var pushpinOptions = { draggable: true };
+            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat, lng), pushpinOptions);
+            map.setView({ center: new Microsoft.Maps.Location(lat, lng), zoom: 15 });
+            var pushpindrag = Microsoft.Maps.Events.addHandler(pushpin, 'drag', onDragDetails);
+            map.entities.push(pushpin);
+        }
+
+        onDragDetails = function (e) {
+            document.getElementById("lng").value = e.entity.getLocation();
+        }
+		
+		function getPointForAndroid(){
+			var point=document.getElementById("lng").value;
+			window.demo.clickOnAndroid_getPoint(point.length==0?"尚未获取到":point);
+		}
+		
+		function setPointForAndroid(_lng,_lat){
+			if(_lng=="" || _lat==""){
+				map.entities.clear();
+			}
+			else{
+				lng=_lng;
+				lat=_lat;
+				clearAllAndAddPoint();
+			}
+		}
+    </script>
+    <title>Bing Maps</title>
+</head>
+<body>
+    <div id='divSearch' style="position:absolute; top:5px; left:0px; right:0px; height:50px; background-color:White; display:none;">
+        <input id="lng" width="100px" />
+        <button onclick="setLocal();">我现在的位置</button>
+    </div>
+
+    <div id="divMap" style="width:100%; height:92%; position:absolute;"></div>
+</body>
+</html>

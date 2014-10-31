@@ -1,0 +1,112 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- 文本行 -->
+    <style name="event_detail_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- 文本 -->
+    <style name="detail_text">
+        <item name="android:textSize">14dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="event_detail_text" parent="detail_text">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 文本编辑 -->
+    <style name="detail_edit">
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="event_detail_edit" parent="detail_edit"></style>
+
+    <style name="detail_sp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <!-- 页签的Layout样式 -->
+    <style name="MuneLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">3dp</item>
+    </style>
+
+    <!-- 页签的TextView样式 -->
+    <style name="MuneTextView">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/nav_link</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/muneother</item>
+        <item name="android:text">asd</item>
+    </style>
+
+    <!-- 页签的ImageView样式 -->
+    <style name="MuneImageView">
+        <item name="android:layout_width">76dp</item>
+        <item name="android:layout_height">5dp</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:src">@drawable/muneselect</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- 图片样式 -->
+    <style name="Image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/tmp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!-- 图片来源选择按钮 -->
+    <style name="ImageSourceButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/imgselect</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <!-- ListView 的样式 -->
+    <style name="ListStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">#00000000</item>
+    </style>
+
+</resources>

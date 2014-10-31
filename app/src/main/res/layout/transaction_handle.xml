@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/rl001"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/plug_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/event_detail_line" >
+
+                    <TextView
+                        style="@style/event_detail_text"
+                        android:text="当前任务描述:" />
+
+                    <TextView
+                        android:id="@+id/edModelCaseRemark"
+                        style="@style/event_detail_edit" >
+                    </TextView>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/gvImage"
+                    android:layout_width="300dp"
+                    android:layout_height="84dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rwn003"
+                    android:fadeScrollbars="false"
+                    android:numColumns="3"
+                    android:padding="8dp" >
+                </GridView>
+
+                <LinearLayout style="@style/event_detail_line" >
+
+                    <TextView
+                        style="@style/event_detail_text"
+                        android:text="办结描述:" />
+
+                    <EditText
+                        android:id="@+id/edRemark"
+                        style="@style/event_detail_edit"
+                        android:layout_height="100dp"
+                        android:inputType="textMultiLine" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/btnAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/submit002" />
+
+            <ImageView
+                android:id="@+id/btnDoResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/submit003" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imageSourceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rl001"
+        android:background="@drawable/imgbg"
+        android:orientation="vertical"
+        android:paddingTop="25dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btnImageT"
+            style="@style/ImageSourceButton"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/btnImageS"
+            style="@style/ImageSourceButton"
+            android:text="相册" />
+
+        <Button
+            android:id="@+id/btnImageC"
+            style="@style/ImageSourceButton"
+            android:text="取消" />
+    </LinearLayout>
+
+</RelativeLayout>
